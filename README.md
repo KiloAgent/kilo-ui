@@ -27,6 +27,14 @@ npx shadcn@latest add KiloAgent/kilo-ui/button
 npx shadcn@latest add KiloAgent/kilo-ui/marketing-section
 ```
 
+Files land under `components/kilo-ui/` (same layout as `src/`, so relative imports between items keep working); fonts go to `public/fonts/`. Then import the theme from your global CSS:
+
+```css
+@import "tailwindcss";
+@import "./components/kilo-ui/theme.css";
+@import "./components/kilo-ui/base.css";
+```
+
 Pin a commit when you want a frozen install:
 
 ```bash
@@ -63,6 +71,15 @@ Peer deps: `react` and `react-dom` ^19. Runtime deps: `@base-ui/react`, `class-v
 | Marketing blocks | `src/marketing/*` | `registry:block` |
 | Helpers | `src/lib/cn.ts`, `src/lib/field-styles.ts` | `registry:lib` |
 | Fonts | `src/fonts/` (Geist OFL) | shipped with `theme` |
+
+## Maintaining the registry
+
+`registry.json` is generated from `src/`. After adding or changing a file, run:
+
+```bash
+node scripts/gen-registry.mjs
+npx shadcn@latest registry validate KiloAgent/kilo-ui
+```
 
 ## Showcase
 

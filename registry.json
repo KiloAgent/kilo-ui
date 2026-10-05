@@ -11,383 +11,44 @@
       "files": [
         {
           "path": "src/theme.css",
-          "type": "registry:style"
+          "type": "registry:file",
+          "target": "components/kilo-ui/theme.css"
         },
         {
           "path": "src/base.css",
-          "type": "registry:style"
+          "type": "registry:file",
+          "target": "components/kilo-ui/base.css"
         },
         {
           "path": "src/fonts/Geist-Variable.woff2",
           "type": "registry:file",
-          "target": "public/fonts/Geist-Variable.woff2"
+          "target": "~/public/fonts/Geist-Variable.woff2"
         },
         {
           "path": "src/fonts/GeistMono-Variable.woff2",
           "type": "registry:file",
-          "target": "public/fonts/GeistMono-Variable.woff2"
+          "target": "~/public/fonts/GeistMono-Variable.woff2"
         },
         {
           "path": "src/fonts/OFL.txt",
           "type": "registry:file",
-          "target": "public/fonts/OFL.txt"
+          "target": "~/public/fonts/OFL.txt"
         }
-      ],
-      "dependencies": []
-    },
-    {
-      "name": "badge",
-      "type": "registry:ui",
-      "title": "Badge",
-      "files": [
-        {
-          "path": "src/components/badge.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "button",
-      "type": "registry:ui",
-      "title": "Button",
-      "files": [
-        {
-          "path": "src/components/button.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "card",
-      "type": "registry:ui",
-      "title": "Card",
-      "files": [
-        {
-          "path": "src/components/card.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "dialog",
-      "type": "registry:ui",
-      "title": "Dialog",
-      "files": [
-        {
-          "path": "src/components/dialog.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "dropdown-menu",
-      "type": "registry:ui",
-      "title": "Dropdown Menu",
-      "files": [
-        {
-          "path": "src/components/dropdown-menu.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "input",
-      "type": "registry:ui",
-      "title": "Input",
-      "files": [
-        {
-          "path": "src/components/input.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "label",
-      "type": "registry:ui",
-      "title": "Label",
-      "files": [
-        {
-          "path": "src/components/label.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "navigation-menu",
-      "type": "registry:ui",
-      "title": "Navigation Menu",
-      "files": [
-        {
-          "path": "src/components/navigation-menu.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "select",
-      "type": "registry:ui",
-      "title": "Select",
-      "files": [
-        {
-          "path": "src/components/select.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "separator",
-      "type": "registry:ui",
-      "title": "Separator",
-      "files": [
-        {
-          "path": "src/components/separator.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "sheet",
-      "type": "registry:ui",
-      "title": "Sheet",
-      "files": [
-        {
-          "path": "src/components/sheet.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "skeleton",
-      "type": "registry:ui",
-      "title": "Skeleton",
-      "files": [
-        {
-          "path": "src/components/skeleton.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "tabs",
-      "type": "registry:ui",
-      "title": "Tabs",
-      "files": [
-        {
-          "path": "src/components/tabs.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "textarea",
-      "type": "registry:ui",
-      "title": "Textarea",
-      "files": [
-        {
-          "path": "src/components/textarea.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "tooltip",
-      "type": "registry:ui",
-      "title": "Tooltip",
-      "files": [
-        {
-          "path": "src/components/tooltip.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "marketing-badge",
-      "type": "registry:block",
-      "title": "Marketing badge",
-      "description": "Dense technical marketing block for KiloAgent sites.",
-      "files": [
-        {
-          "path": "src/marketing/badge.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "marketing-button",
-      "type": "registry:block",
-      "title": "Marketing button",
-      "description": "Dense technical marketing block for KiloAgent sites.",
-      "files": [
-        {
-          "path": "src/marketing/button.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "marketing-card",
-      "type": "registry:block",
-      "title": "Marketing card",
-      "description": "Dense technical marketing block for KiloAgent sites.",
-      "files": [
-        {
-          "path": "src/marketing/card.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "marketing-case-card",
-      "type": "registry:block",
-      "title": "Marketing case-card",
-      "description": "Dense technical marketing block for KiloAgent sites.",
-      "files": [
-        {
-          "path": "src/marketing/case-card.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "marketing-cta-block",
-      "type": "registry:block",
-      "title": "Marketing cta-block",
-      "description": "Dense technical marketing block for KiloAgent sites.",
-      "files": [
-        {
-          "path": "src/marketing/cta-block.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "marketing-founder-card",
-      "type": "registry:block",
-      "title": "Marketing founder-card",
-      "description": "Dense technical marketing block for KiloAgent sites.",
-      "files": [
-        {
-          "path": "src/marketing/founder-card.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "marketing-native-select",
-      "type": "registry:block",
-      "title": "Marketing native-select",
-      "description": "Dense technical marketing block for KiloAgent sites.",
-      "files": [
-        {
-          "path": "src/marketing/native-select.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "marketing-section",
-      "type": "registry:block",
-      "title": "Marketing section",
-      "description": "Dense technical marketing block for KiloAgent sites.",
-      "files": [
-        {
-          "path": "src/marketing/section.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
-      ]
-    },
-    {
-      "name": "marketing-tool-shell",
-      "type": "registry:block",
-      "title": "Marketing tool-shell",
-      "description": "Dense technical marketing block for KiloAgent sites.",
-      "files": [
-        {
-          "path": "src/marketing/tool-shell.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
       ]
     },
     {
       "name": "cn",
       "type": "registry:lib",
       "title": "cn",
+      "dependencies": [
+        "clsx@^2.1.1",
+        "tailwind-merge@^3.3.1"
+      ],
       "files": [
         {
           "path": "src/lib/cn.ts",
-          "type": "registry:lib"
+          "type": "registry:lib",
+          "target": "components/kilo-ui/lib/cn.ts"
         }
       ]
     },
@@ -398,41 +59,464 @@
       "files": [
         {
           "path": "src/lib/field-styles.ts",
-          "type": "registry:lib"
+          "type": "registry:lib",
+          "target": "components/kilo-ui/lib/field-styles.ts"
         }
-      ],
-      "registryDependencies": [
-        "KiloAgent/kilo-ui/cn"
       ]
     },
     {
-      "name": "marketing-typography",
-      "type": "registry:block",
-      "title": "Marketing Typography",
-      "description": "Dense technical marketing block for KiloAgent sites.",
-      "files": [
-        {
-          "path": "src/marketing/typography.tsx",
-          "type": "registry:component"
-        }
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "class-variance-authority@^0.7.1"
       ],
       "registryDependencies": [
         "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/badge.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/button.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/card.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "lucide-react@^0.544.0"
+      ],
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/button",
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "lucide-react@^0.544.0"
+      ],
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/dropdown-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/dropdown-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "dependencies": [
+        "@base-ui/react@^1.8.0"
+      ],
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn",
+        "KiloAgent/kilo-ui/field-styles"
+      ],
+      "files": [
+        {
+          "path": "src/components/input.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn",
+        "KiloAgent/kilo-ui/field-styles"
+      ],
+      "files": [
+        {
+          "path": "src/components/label.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "class-variance-authority@^0.7.1",
+        "lucide-react@^0.544.0"
+      ],
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/navigation-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/navigation-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "lucide-react@^0.544.0"
+      ],
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/select.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "dependencies": [
+        "@base-ui/react@^1.8.0"
+      ],
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/separator.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/separator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "lucide-react@^0.544.0"
+      ],
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/button",
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/sheet.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/sheet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/skeleton.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/skeleton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/tabs.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn",
+        "KiloAgent/kilo-ui/field-styles"
+      ],
+      "files": [
+        {
+          "path": "src/components/textarea.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/textarea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "dependencies": [
+        "@base-ui/react@^1.8.0"
+      ],
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "marketing-badge",
+      "type": "registry:block",
+      "title": "Marketing Badge",
+      "description": "Dense technical marketing block.",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/marketing/badge.tsx",
+          "type": "registry:component",
+          "target": "components/kilo-ui/marketing/badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "marketing-button",
+      "type": "registry:block",
+      "title": "Marketing Button",
+      "description": "Dense technical marketing block.",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/marketing/button.tsx",
+          "type": "registry:component",
+          "target": "components/kilo-ui/marketing/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "marketing-card",
+      "type": "registry:block",
+      "title": "Marketing Card",
+      "description": "Dense technical marketing block.",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/marketing/card.tsx",
+          "type": "registry:component",
+          "target": "components/kilo-ui/marketing/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "marketing-case-card",
+      "type": "registry:block",
+      "title": "Marketing Case Card",
+      "description": "Dense technical marketing block.",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/marketing-badge",
+        "KiloAgent/kilo-ui/marketing-card"
+      ],
+      "files": [
+        {
+          "path": "src/marketing/case-card.tsx",
+          "type": "registry:component",
+          "target": "components/kilo-ui/marketing/case-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "marketing-cta-block",
+      "type": "registry:block",
+      "title": "Marketing Cta Block",
+      "description": "Dense technical marketing block.",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn",
+        "KiloAgent/kilo-ui/marketing-card"
+      ],
+      "files": [
+        {
+          "path": "src/marketing/cta-block.tsx",
+          "type": "registry:component",
+          "target": "components/kilo-ui/marketing/cta-block.tsx"
+        }
+      ]
+    },
+    {
+      "name": "marketing-founder-card",
+      "type": "registry:block",
+      "title": "Marketing Founder Card",
+      "description": "Dense technical marketing block.",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/marketing-badge",
+        "KiloAgent/kilo-ui/marketing-card"
+      ],
+      "files": [
+        {
+          "path": "src/marketing/founder-card.tsx",
+          "type": "registry:component",
+          "target": "components/kilo-ui/marketing/founder-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "marketing-native-select",
+      "type": "registry:block",
+      "title": "Marketing Native Select",
+      "description": "Dense technical marketing block.",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn",
+        "KiloAgent/kilo-ui/field-styles"
+      ],
+      "files": [
+        {
+          "path": "src/marketing/native-select.tsx",
+          "type": "registry:component",
+          "target": "components/kilo-ui/marketing/native-select.tsx"
+        }
       ]
     },
     {
       "name": "marketing-prose",
       "type": "registry:block",
       "title": "Marketing Prose",
-      "description": "Dense technical marketing block for KiloAgent sites.",
+      "description": "Dense technical marketing block.",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
       "files": [
         {
           "path": "src/marketing/prose.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "components/kilo-ui/marketing/prose.tsx"
         }
+      ]
+    },
+    {
+      "name": "marketing-section",
+      "type": "registry:block",
+      "title": "Marketing Section",
+      "description": "Dense technical marketing block.",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn",
+        "KiloAgent/kilo-ui/marketing-badge",
+        "KiloAgent/kilo-ui/marketing-typography"
       ],
+      "files": [
+        {
+          "path": "src/marketing/section.tsx",
+          "type": "registry:component",
+          "target": "components/kilo-ui/marketing/section.tsx"
+        }
+      ]
+    },
+    {
+      "name": "marketing-tool-shell",
+      "type": "registry:block",
+      "title": "Marketing Tool Shell",
+      "description": "Dense technical marketing block.",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn",
+        "KiloAgent/kilo-ui/marketing-card"
+      ],
+      "files": [
+        {
+          "path": "src/marketing/tool-shell.tsx",
+          "type": "registry:component",
+          "target": "components/kilo-ui/marketing/tool-shell.tsx"
+        }
+      ]
+    },
+    {
+      "name": "marketing-typography",
+      "type": "registry:block",
+      "title": "Marketing Typography",
+      "description": "Dense technical marketing block.",
       "registryDependencies": [
         "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/marketing/typography.tsx",
+          "type": "registry:component",
+          "target": "components/kilo-ui/marketing/typography.tsx"
+        }
       ]
     }
   ]
