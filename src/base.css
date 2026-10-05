@@ -1,0 +1,105 @@
+/*
+ * Global base styles for the KA light theme.
+ * Applied site-wide (no body.ka-ui opt-in).
+ */
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-ka-sans);
+    font-feature-settings:
+      "kern" 1,
+      "liga" 1;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.07 0 0 0 0 0.07 0 0 0 0 0.08 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  ::selection {
+    background-color: var(--color-ka-accent);
+    color: var(--color-ka-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ka-ink);
+    outline-offset: 3px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ka-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-ka-line-strong);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ka-muted);
+}
+
+/* Sticky/fixed header: always solid theme background, never translucent. */
+#navbar {
+  background-color: var(--color-ka-bg);
+  border-bottom: 1px solid var(--color-ka-line);
+}
+
+#navbar.scrolled,
+#navbar.nav-menu-open {
+  background-color: var(--color-ka-bg);
+  border-bottom: 1px solid var(--color-ka-line);
+}
+
+/* Lock page scroll while the mobile menu sheet is open. */
+html.nav-menu-open,
+html.nav-menu-open body {
+  overflow: hidden;
+}
+
+/*
+ * Mobile nav progressive enhancement (from #284):
+ * - Without JS: wrap-row [data-nav-fallback] stays visible; hamburger hidden.
+ * - After initNavMenu sets data-nav-ready: hamburger shows; fallback hides.
+ */
+#navbar[data-nav-menu]:not([data-nav-ready]) #nav-menu-button {
+  display: none;
+}
+
+#navbar[data-nav-menu][data-nav-ready] [data-nav-fallback] {
+  display: none;
+}
+
+.hp-field {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Tool wizard step titles: avoid heavy focus outline when JS focuses them. */
+.ka-focus-quiet:focus,
+.ka-focus-quiet:focus-visible {
+  outline: none;
+  box-shadow: none;
+}

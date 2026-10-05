@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>kilo-ui showcase</title>
+    <style>
+      @font-face {
+        font-family: "Geist";
+        src: url("../../src/fonts/Geist-Variable.woff2") format("woff2");
+        font-weight: 100 900;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Geist Mono";
+        src: url("../../src/fonts/GeistMono-Variable.woff2") format("woff2");
+        font-weight: 100 900;
+        font-display: swap;
+      }
+      :root {
+        --ka-bg: #f7f7f8;
+        --ka-surface: #ffffff;
+        --ka-line: #d8d8dc;
+        --ka-ink: #111214;
+        --ka-muted: #2f3339;
+        --ka-faint: #6b6f76;
+        --ka-accent: #f5b301;
+        --radius: 0.125rem;
+        --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+        --font-mono: "Geist Mono", ui-monospace, monospace;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        background: var(--ka-bg);
+        color: var(--ka-ink);
+        line-height: 1.45;
+      }
+      main { max-width: 52rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+      .label {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ka-faint);
+      }
+      h1 {
+        font-size: clamp(2.25rem, 1.75rem + 2vw, 3.25rem);
+        letter-spacing: -0.035em;
+        line-height: 1.1;
+        margin: 0.5rem 0 0.75rem;
+      }
+      .lede { color: var(--ka-muted); max-width: 36rem; }
+      section { margin-top: 2.5rem; }
+      section h2 { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ka-faint); font-weight: 500; margin: 0 0 0.75rem; }
+      .row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center;
+        height: 2rem; padding: 0 0.625rem; border-radius: var(--radius);
+        border: 1px solid transparent; font-size: 0.875rem; font-weight: 500;
+        cursor: default;
+      }
+      .btn-primary { background: var(--ka-ink); color: var(--ka-surface); }
+      .btn-secondary { background: #ebebed; color: var(--ka-ink); }
+      .btn-outline { background: var(--ka-surface); border-color: var(--ka-line); }
+      .btn-ghost { background: transparent; }
+      .badge {
+        display: inline-flex; align-items: center; height: 1.25rem; padding: 0 0.4rem;
+        border-radius: var(--radius); border: 1px solid var(--ka-line);
+        font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.06em;
+        text-transform: uppercase; background: var(--ka-surface);
+      }
+      .card {
+        background: var(--ka-surface); border: 1px solid var(--ka-line);
+        border-radius: var(--radius); padding: 1rem 1.1rem; max-width: 22rem;
+      }
+      .card h3 { margin: 0 0 0.35rem; font-size: 1rem; }
+      .card p { margin: 0; color: var(--ka-muted); font-size: 0.9rem; }
+      .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr)); gap: 0.5rem; }
+      .swatch {
+        border: 1px solid var(--ka-line); border-radius: var(--radius); overflow: hidden;
+        background: var(--ka-surface);
+      }
+      .swatch .chip { height: 2.5rem; }
+      .swatch .meta { padding: 0.35rem 0.45rem; font-family: var(--font-mono); font-size: 0.65rem; color: var(--ka-faint); }
+      input, textarea {
+        width: 100%; max-width: 20rem; border: 1px solid var(--ka-line);
+        border-radius: var(--radius); background: var(--ka-surface);
+        padding: 0.4rem 0.55rem; font: inherit; font-size: 0.875rem;
+      }
+      .field { display: grid; gap: 0.35rem; margin-bottom: 0.75rem; }
+      .field label { font-size: 0.8rem; font-weight: 500; }
+      hr { border: 0; border-top: 1px solid var(--ka-line); margin: 1.25rem 0; }
+      footer { margin-top: 3rem; font-family: var(--font-mono); font-size: 0.7rem; color: var(--ka-faint); }
+      a { color: var(--ka-ink); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="label">kilo-ui</p>
+      <h1>Component showcase</h1>
+      <p class="lede">
+        Dense technical kit: hairline borders, ~2px radii, Geist + Geist Mono.
+        Static preview of tokens and chrome. Full React kitchen-sink:
+        <a href="https://www.kiloagent.com/ui">kiloagent.com/ui</a>.
+      </p>
+
+      <section>
+        <h2>Tokens</h2>
+        <div class="swatches">
+          <div class="swatch"><div class="chip" style="background:#f7f7f8"></div><div class="meta">ka-bg</div></div>
+          <div class="swatch"><div class="chip" style="background:#fff"></div><div class="meta">ka-surface</div></div>
+          <div class="swatch"><div class="chip" style="background:#d8d8dc"></div><div class="meta">ka-line</div></div>
+          <div class="swatch"><div class="chip" style="background:#111214"></div><div class="meta">ka-ink</div></div>
+          <div class="swatch"><div class="chip" style="background:#2f3339"></div><div class="meta">ka-muted</div></div>
+          <div class="swatch"><div class="chip" style="background:#f5b301"></div><div class="meta">ka-accent</div></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Buttons</h2>
+        <div class="row">
+          <span class="btn btn-primary">Primary</span>
+          <span class="btn btn-secondary">Secondary</span>
+          <span class="btn btn-outline">Outline</span>
+          <span class="btn btn-ghost">Ghost</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Badge</h2>
+        <div class="row">
+          <span class="badge">Default</span>
+          <span class="badge">Secondary</span>
+          <span class="badge">Outline</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Card</h2>
+        <div class="card">
+          <h3>Hairline card</h3>
+          <p>Mapped to ka surface and line tokens. Sharp corner, 1px border.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Form</h2>
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" placeholder="Ada Lovelace" />
+        </div>
+        <div class="field">
+          <label for="note">Note</label>
+          <textarea id="note" rows="3" placeholder="Short note"></textarea>
+        </div>
+      </section>
+
+      <hr />
+      <footer>
+        Install: <code>npx shadcn@latest add KiloAgent/kilo-ui/button</code>
+        · MIT · <a href="https://github.com/KiloAgent/kilo-ui">GitHub</a>
+      </footer>
+    </main>
+  </body>
+</html>

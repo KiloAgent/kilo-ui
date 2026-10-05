@@ -1,0 +1,194 @@
+/*
+ * @kiloagent/ui theme — single Tailwind v4 source of truth.
+ * Raw ka-* tokens plus shadcn semantic CSS variables mapped from them.
+ * Light is the default. .dark is a stub for the app (step later).
+ */
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/Geist-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/GeistMono-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* Neutral palette */
+  --color-ka-bg: #f7f7f8;
+  --color-ka-surface: #ffffff;
+  --color-ka-subtle: #ebebed;
+  --color-ka-line: #d8d8dc;
+  --color-ka-line-strong: #c9c9ce;
+  --color-ka-ink: #111214;
+  --color-ka-ink-soft: #1a1c1f;
+  --color-ka-muted: #2f3339;
+  --color-ka-faint: #6b6f76;
+  --color-ka-accent: #f5b301;
+  --color-ka-accent-ink: #7a5600;
+  --color-ka-accent-soft: #fff5d6;
+  --color-ka-danger: #b42318;
+
+  --font-ka-sans:
+    "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  --font-ka-mono:
+    "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    monospace;
+  --font-sans: var(--font-ka-sans);
+  --font-mono: var(--font-ka-mono);
+
+  --radius-ka-card: 0.125rem; /* dense technical: ~2px */
+  --radius-ka-button: 0.125rem;
+  --radius-ka-pill: 0.125rem; /* sharp chips, not pills */
+
+  --text-ka-display: clamp(2.75rem, 2rem + 3.5vw, 4.5rem);
+  --text-ka-display--line-height: 1.02;
+  --text-ka-display--letter-spacing: -0.045em;
+  --text-ka-h1: clamp(2.25rem, 1.75rem + 2vw, 3.25rem);
+  --text-ka-h1--line-height: 1.1;
+  --text-ka-h1--letter-spacing: -0.035em;
+  --text-ka-h2: clamp(1.75rem, 1.45rem + 1.3vw, 2.5rem);
+  --text-ka-h2--line-height: 1.08;
+  --text-ka-h2--letter-spacing: -0.035em;
+  --text-ka-h3: 1.375rem;
+  --text-ka-h3--line-height: 1.25;
+  --text-ka-h3--letter-spacing: -0.02em;
+  --text-ka-lead: 1.125rem;
+  --text-ka-lead--line-height: 1.6;
+  --text-ka-body: 1rem;
+  --text-ka-body--line-height: 1.65;
+  --text-ka-small: 0.875rem;
+  --text-ka-small--line-height: 1.55;
+  --text-ka-label: 0.6875rem;
+  --text-ka-label--line-height: 1.4;
+  --text-ka-label--letter-spacing: 0.08em;
+
+  --spacing-ka-section-sm: 1.75rem;
+  --spacing-ka-section: 2.5rem;
+  /* Fixed header bar height (h-20). Layout content uses pt-ka-header. */
+  --spacing-ka-header: 5rem;
+
+  --container-ka-sm: 40rem;
+  --container-ka-md: 52rem;
+  --container-ka-lg: 72rem;
+
+  --shadow-ka-card: none; /* hairline borders carry the edge */
+  --shadow-ka-raised: 0 1px 0 rgb(17 18 20 / 0.06);
+}
+
+/* shadcn semantic tokens (light) mapped from ka-* */
+:root {
+  --radius: 0; /* Lyra-style: square corners */
+  --background: var(--color-ka-bg);
+  --foreground: var(--color-ka-ink);
+  --card: var(--color-ka-surface);
+  --card-foreground: var(--color-ka-ink);
+  --popover: var(--color-ka-surface);
+  --popover-foreground: var(--color-ka-ink);
+  --primary: var(--color-ka-ink);
+  --primary-foreground: #ffffff;
+  --secondary: var(--color-ka-subtle);
+  --secondary-foreground: var(--color-ka-ink);
+  --muted: var(--color-ka-subtle);
+  --muted-foreground: var(--color-ka-muted);
+  --accent: var(--color-ka-accent-soft);
+  --accent-foreground: var(--color-ka-accent-ink);
+  --destructive: var(--color-ka-danger);
+  --border: var(--color-ka-line);
+  --input: var(--color-ka-line-strong);
+  --ring: var(--color-ka-ink);
+  --chart-1: var(--color-ka-accent);
+  --chart-2: var(--color-ka-ink-soft);
+  --chart-3: var(--color-ka-muted);
+  --chart-4: var(--color-ka-line-strong);
+  --chart-5: var(--color-ka-faint);
+  --sidebar: var(--color-ka-surface);
+  --sidebar-foreground: var(--color-ka-ink);
+  --sidebar-primary: var(--color-ka-ink);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--color-ka-subtle);
+  --sidebar-accent-foreground: var(--color-ka-ink);
+  --sidebar-border: var(--color-ka-line);
+  --sidebar-ring: var(--color-ka-ink);
+}
+
+/* Dark stub for the future app. Not used by the marketing site yet. */
+.dark {
+  --background: #111214;
+  --foreground: #f3f3f4;
+  --card: #1a1b1e;
+  --card-foreground: #f3f3f4;
+  --popover: #1a1b1e;
+  --popover-foreground: #f3f3f4;
+  --primary: #f3f3f4;
+  --primary-foreground: #111214;
+  --secondary: #2b2d31;
+  --secondary-foreground: #f3f3f4;
+  --muted: #2b2d31;
+  --muted-foreground: #8e9198;
+  --accent: #3a2e10;
+  --accent-foreground: #f5b301;
+  --destructive: #f97066;
+  --border: rgb(255 255 255 / 10%);
+  --input: rgb(255 255 255 / 15%);
+  --ring: #c9c9ce;
+  --sidebar: #1a1b1e;
+  --sidebar-foreground: #f3f3f4;
+  --sidebar-primary: #f5b301;
+  --sidebar-primary-foreground: #111214;
+  --sidebar-accent: #2b2d31;
+  --sidebar-accent-foreground: #f3f3f4;
+  --sidebar-border: rgb(255 255 255 / 10%);
+  --sidebar-ring: #c9c9ce;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
