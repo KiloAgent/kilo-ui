@@ -118,6 +118,21 @@
       ]
     },
     {
+      "name": "data-cell",
+      "type": "registry:ui",
+      "title": "Data Cell",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/data-cell.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/data-cell.tsx"
+        }
+      ]
+    },
+    {
       "name": "dialog",
       "type": "registry:ui",
       "title": "Dialog",
@@ -153,6 +168,21 @@
           "path": "src/components/dropdown-menu.tsx",
           "type": "registry:ui",
           "target": "components/kilo-ui/components/dropdown-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "event-row",
+      "type": "registry:ui",
+      "title": "Event Row",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/event-row.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/event-row.tsx"
         }
       ]
     },
@@ -208,6 +238,21 @@
           "path": "src/components/navigation-menu.tsx",
           "type": "registry:ui",
           "target": "components/kilo-ui/components/navigation-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "panel",
+      "type": "registry:ui",
+      "title": "Panel",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/panel.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/panel.tsx"
         }
       ]
     },
@@ -280,6 +325,24 @@
           "path": "src/components/skeleton.tsx",
           "type": "registry:ui",
           "target": "components/kilo-ui/components/skeleton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "status-dot",
+      "type": "registry:ui",
+      "title": "Status Dot",
+      "dependencies": [
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/status-dot.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/status-dot.tsx"
         }
       ]
     },

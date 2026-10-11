@@ -25,6 +25,9 @@
         --ka-muted: #2f3339;
         --ka-faint: #6b6f76;
         --ka-accent: #f5b301;
+        --ka-danger: #b42318;
+        --ka-subtle: #ebebed;
+        --ka-success: #10b981;
         --radius: 0.125rem;
         --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
         --font-mono: "Geist Mono", ui-monospace, monospace;
@@ -94,6 +97,152 @@
       hr { border: 0; border-top: 1px solid var(--ka-line); margin: 1.25rem 0; }
       footer { margin-top: 3rem; font-family: var(--font-mono); font-size: 0.7rem; color: var(--ka-faint); }
       a { color: var(--ka-ink); }
+
+      .panel {
+        background: var(--ka-surface);
+        border: 1px solid var(--ka-line);
+        border-radius: var(--radius);
+        overflow: hidden;
+        max-width: 36rem;
+      }
+      .panel-header, .panel-footer {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.35rem 0.625rem;
+        min-height: 1.75rem;
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .panel-header { border-bottom: 1px solid var(--ka-line); }
+      .panel-title { display: flex; align-items: center; gap: 0.5rem; flex: 1; font-weight: 500; }
+      .panel-crumb { color: var(--ka-faint); }
+      .panel-actions { margin-left: auto; color: var(--ka-faint); }
+      .panel-footer {
+        border-top: 1px solid var(--ka-line);
+        background: var(--ka-subtle);
+        color: var(--ka-faint);
+      }
+      .data-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1px;
+        background: var(--ka-line);
+        border-bottom: 1px solid var(--ka-line);
+      }
+      .data-cell {
+        background: var(--ka-surface);
+        padding: 0.5rem 0.625rem;
+        min-width: 0;
+      }
+      .data-label {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ka-faint);
+        margin-bottom: 0.2rem;
+      }
+      .data-value {
+        font-family: var(--font-mono);
+        font-size: 0.8125rem;
+        font-weight: 500;
+        font-variant-numeric: tabular-nums;
+      }
+      .data-hint {
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        color: var(--ka-faint);
+        margin-left: 0.35rem;
+      }
+      .event-feed { background: var(--ka-surface); max-height: 9.5rem; overflow: auto; }
+      .event-row {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        min-height: 1.75rem;
+        padding: 0 0.625rem;
+        border-bottom: 1px solid var(--ka-line);
+        font-size: 0.75rem;
+      }
+      .event-row:last-child { border-bottom: 0; }
+      .event-row:hover { background: color-mix(in srgb, var(--ka-subtle) 70%, transparent); }
+      .event-ts {
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        color: var(--ka-faint);
+        font-variant-numeric: tabular-nums;
+        flex-shrink: 0;
+      }
+      .event-tag {
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--ka-muted);
+        flex-shrink: 0;
+      }
+      .event-msg { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .event-meta {
+        margin-left: auto;
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        color: var(--ka-faint);
+        font-variant-numeric: tabular-nums;
+        flex-shrink: 0;
+      }
+      .status-dot {
+        position: relative;
+        display: inline-flex;
+        width: 0.75rem;
+        height: 0.75rem;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        vertical-align: middle;
+      }
+      .status-dot i {
+        display: block;
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: var(--ka-accent);
+      }
+      .status-dot.sm i { width: 4px; height: 4px; }
+      .status-dot.success i { background: var(--ka-success); }
+      .status-dot.danger i { background: var(--ka-danger); }
+      .status-dot.neutral i { background: var(--ka-faint); }
+      .status-dot.pulse::before {
+        content: "";
+        position: absolute;
+        inset: -3px;
+        border-radius: 999px;
+        background: inherit;
+        background-color: var(--ka-accent);
+        opacity: 0.4;
+        animation: ka-ping 1.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+      }
+      .status-dot.pulse.success::before { background-color: var(--ka-success); }
+      .status-dot.pulse.danger::before { background-color: var(--ka-danger); }
+      .status-dot.pulse.neutral::before { background-color: var(--ka-faint); }
+      @keyframes ka-ping {
+        75%, 100% { transform: scale(2.2); opacity: 0; }
+      }
+      .dot-caption {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-family: var(--font-mono);
+        font-size: 0.65rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--ka-faint);
+      }
     </style>
   </head>
   <body>
@@ -142,6 +291,83 @@
         <div class="card">
           <h3>Hairline card</h3>
           <p>Mapped to ka surface and line tokens. Sharp corner, 1px border.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Status dots</h2>
+        <div class="row">
+          <span class="dot-caption"><span class="status-dot" role="status" aria-label="Status: active"><i></i></span> Default</span>
+          <span class="dot-caption"><span class="status-dot success" role="status" aria-label="Status: success"><i></i></span> Success</span>
+          <span class="dot-caption"><span class="status-dot danger" role="status" aria-label="Status: alert"><i></i></span> Danger</span>
+          <span class="dot-caption"><span class="status-dot neutral" role="status" aria-label="Status: idle"><i></i></span> Neutral</span>
+          <span class="dot-caption"><span class="status-dot pulse" role="status" aria-label="Status: active"><i></i></span> Pulsing</span>
+          <span class="dot-caption"><span class="status-dot danger pulse" role="status" aria-label="Status: alert"><i></i></span> Alert live</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Target inspector</h2>
+        <div class="panel">
+          <div class="panel-header">
+            <span class="panel-title">
+              <span class="status-dot pulse" role="status" aria-label="Status: active"><i></i></span>
+              Fleet <span class="panel-crumb">/</span> Target <span class="panel-crumb">/</span> MMSI 244670890
+            </span>
+            <span class="panel-actions">Live</span>
+          </div>
+          <div class="data-grid">
+            <div class="data-cell">
+              <div class="data-label">Run ID</div>
+              <div class="data-value">run_8f3c21</div>
+            </div>
+            <div class="data-cell">
+              <div class="data-label">
+                <span class="status-dot success sm" role="status" aria-label="Status: success"><i></i></span>
+                Status
+              </div>
+              <div class="data-value">Live<span class="data-hint">streaming</span></div>
+            </div>
+            <div class="data-cell">
+              <div class="data-label">Duration</div>
+              <div class="data-value">00:12:48</div>
+            </div>
+            <div class="data-cell">
+              <div class="data-label">Tokens</div>
+              <div class="data-value">14,302<span class="data-hint">tok</span></div>
+            </div>
+          </div>
+          <div class="event-feed">
+            <div class="event-row">
+              <span class="status-dot sm" role="status" aria-label="Status: active"><i></i></span>
+              <span class="event-ts">14:02:18</span>
+              <span class="event-tag">Tool</span>
+              <span class="event-msg">browse_page</span>
+              <span class="event-meta">128ms</span>
+            </div>
+            <div class="event-row">
+              <span class="status-dot success sm" role="status" aria-label="Status: success"><i></i></span>
+              <span class="event-ts">14:02:41</span>
+              <span class="event-tag">Run</span>
+              <span class="event-msg">tokens.delta +842</span>
+              <span class="event-meta">+842</span>
+            </div>
+            <div class="event-row">
+              <span class="status-dot pulse sm" role="status" aria-label="Status: active"><i></i></span>
+              <span class="event-ts">14:03:02</span>
+              <span class="event-tag">AIS</span>
+              <span class="event-msg">target.acquire MMSI 244670890</span>
+              <span class="event-meta">02m ago</span>
+            </div>
+            <div class="event-row">
+              <span class="status-dot danger sm" role="status" aria-label="Status: alert"><i></i></span>
+              <span class="event-ts">14:03:11</span>
+              <span class="event-tag">Run</span>
+              <span class="event-msg">tool.timeout browse_page</span>
+              <span class="event-meta">1.2s</span>
+            </div>
+          </div>
+          <div class="panel-footer">4 events · 128ms p95 · 14.3k tokens</div>
         </div>
       </section>
 
