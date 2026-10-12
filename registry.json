@@ -221,6 +221,21 @@
       ]
     },
     {
+      "name": "isometric-stage",
+      "type": "registry:ui",
+      "title": "Isometric Stage",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/isometric-stage.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/isometric-stage.tsx"
+        }
+      ]
+    },
+    {
       "name": "label",
       "type": "registry:ui",
       "title": "Label",
