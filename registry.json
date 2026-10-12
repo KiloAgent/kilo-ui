@@ -206,6 +206,21 @@
       ]
     },
     {
+      "name": "integration-card",
+      "type": "registry:ui",
+      "title": "Integration Card",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/integration-card.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/integration-card.tsx"
+        }
+      ]
+    },
+    {
       "name": "label",
       "type": "registry:ui",
       "title": "Label",
@@ -329,6 +344,21 @@
       ]
     },
     {
+      "name": "spec-row",
+      "type": "registry:ui",
+      "title": "Spec Row",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/spec-row.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/spec-row.tsx"
+        }
+      ]
+    },
+    {
       "name": "status-dot",
       "type": "registry:ui",
       "title": "Status Dot",
@@ -343,6 +373,21 @@
           "path": "src/components/status-dot.tsx",
           "type": "registry:ui",
           "target": "components/kilo-ui/components/status-dot.tsx"
+        }
+      ]
+    },
+    {
+      "name": "step-card",
+      "type": "registry:ui",
+      "title": "Step Card",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/step-card.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/step-card.tsx"
         }
       ]
     },

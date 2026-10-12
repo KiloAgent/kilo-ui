@@ -243,6 +243,158 @@
         text-transform: uppercase;
         color: var(--ka-faint);
       }
+
+      .integration-grid,
+      .step-grid {
+        display: grid;
+        gap: 0.75rem;
+      }
+      .integration-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .step-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      @media (max-width: 40rem) {
+        .integration-grid, .step-grid { grid-template-columns: minmax(0, 1fr); }
+      }
+      .integration-card, .step-card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        height: 100%;
+        min-width: 0;
+        background: var(--ka-surface);
+        border: 1px solid var(--ka-line);
+        border-radius: var(--radius);
+        padding: 0.75rem;
+      }
+      .integration-card { gap: 0.625rem; }
+      .integration-card:hover { background: color-mix(in srgb, var(--ka-subtle) 40%, var(--ka-surface)); }
+      .integration-body {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.625rem;
+        min-width: 0;
+        flex: 1;
+      }
+      .integration-icon {
+        display: flex;
+        width: 2rem;
+        height: 2rem;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--ka-line);
+        border-radius: var(--radius);
+        background: color-mix(in srgb, var(--ka-subtle) 50%, var(--ka-surface));
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--ka-ink);
+      }
+      .integration-copy { display: flex; min-width: 0; flex: 1; flex-direction: column; gap: 0.25rem; }
+      .integration-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem; }
+      .integration-name { font-size: 0.875rem; font-weight: 500; }
+      .integration-status {
+        display: block;
+        margin-top: 0.125rem;
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ka-faint);
+      }
+      .micro-chip {
+        flex-shrink: 0;
+        border: 1px solid var(--ka-line);
+        border-radius: var(--radius);
+        padding: 0.05rem 0.375rem;
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--ka-muted);
+      }
+      .integration-desc, .step-desc {
+        margin: 0;
+        font-size: 0.75rem;
+        line-height: 1.35;
+        color: var(--ka-muted);
+      }
+      .integration-action {
+        margin-top: auto;
+        padding-top: 0.125rem;
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--ka-ink);
+      }
+
+      .spec-matrix {
+        max-width: 28rem;
+        background: var(--ka-surface);
+        border: 1px solid var(--ka-line);
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+      .spec-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        min-height: 2rem;
+        padding: 0.5rem 0.625rem;
+        border-bottom: 1px solid var(--ka-line);
+      }
+      .spec-row:last-child { border-bottom: 0; }
+      .spec-label { font-size: 0.75rem; color: var(--ka-muted); }
+      .spec-hint {
+        margin-top: 0.125rem;
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        color: var(--ka-faint);
+      }
+      .spec-value-wrap { display: flex; align-items: baseline; gap: 0.375rem; flex-shrink: 0; }
+      .spec-value {
+        font-family: var(--font-mono);
+        font-size: 0.875rem;
+        font-weight: 500;
+        font-variant-numeric: tabular-nums;
+      }
+      .spec-unit {
+        border: 1px solid var(--ka-line);
+        border-radius: var(--radius);
+        padding: 0.05rem 0.375rem;
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--ka-faint);
+      }
+
+      .step-index {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--ka-faint);
+      }
+      .step-head { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+      .step-title { font-size: 0.875rem; font-weight: 600; }
+      .step-visual {
+        margin: auto 0 0;
+        padding: 0.4rem 0.5rem;
+        border: 1px solid var(--ka-line);
+        border-radius: var(--radius);
+        background: var(--ka-bg);
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        color: var(--ka-muted);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
     </style>
   </head>
   <body>
@@ -368,6 +520,138 @@
             </div>
           </div>
           <div class="panel-footer">4 events · 128ms p95 · 14.3k tokens</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Integrations</h2>
+        <div class="integration-grid" role="list">
+          <div class="integration-card" role="listitem">
+            <div class="integration-body">
+              <span class="integration-icon" aria-hidden="true">Gm</span>
+              <div class="integration-copy">
+                <div class="integration-head">
+                  <div>
+                    <div class="integration-name">Gmail &amp; Workspace</div>
+                    <span class="integration-status">OAuth 2.0</span>
+                  </div>
+                </div>
+                <p class="integration-desc">Inbox, Calendar, and Drive as live agent sources.</p>
+                <span class="integration-action">Connect</span>
+              </div>
+            </div>
+          </div>
+          <div class="integration-card" role="listitem">
+            <div class="integration-body">
+              <span class="integration-icon" aria-hidden="true">Sl</span>
+              <div class="integration-copy">
+                <div class="integration-head">
+                  <div>
+                    <div class="integration-name">Slack Bot</div>
+                    <span class="integration-status">Active</span>
+                  </div>
+                  <span class="micro-chip">Pre-configured</span>
+                </div>
+                <p class="integration-desc">Route alerts and accept /kilo commands in-channel.</p>
+              </div>
+            </div>
+          </div>
+          <div class="integration-card" role="listitem">
+            <div class="integration-body">
+              <span class="integration-icon" aria-hidden="true">Me</span>
+              <div class="integration-copy">
+                <div class="integration-head">
+                  <div>
+                    <div class="integration-name">Meta Ads Coordinator</div>
+                    <span class="integration-status">OAuth 2.0</span>
+                  </div>
+                  <span class="micro-chip">Pro</span>
+                </div>
+                <p class="integration-desc">Coordinate campaign loops across ad accounts.</p>
+              </div>
+            </div>
+          </div>
+          <div class="integration-card" role="listitem">
+            <div class="integration-body">
+              <span class="integration-icon" aria-hidden="true">Ge</span>
+              <div class="integration-copy">
+                <div class="integration-head">
+                  <div>
+                    <div class="integration-name">Gemini Flash</div>
+                    <span class="integration-status">Zero-setup</span>
+                  </div>
+                  <span class="micro-chip">Pre-configured</span>
+                </div>
+                <p class="integration-desc">Fast vision/text model for cheap inner-loop calls.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Runtime specs</h2>
+        <div class="spec-matrix" role="list">
+          <div class="spec-row" role="listitem">
+            <div>
+              <div class="spec-label">Execution memory</div>
+              <div class="spec-hint">isolate budget</div>
+            </div>
+            <div class="spec-value-wrap">
+              <span class="spec-value">512</span>
+              <span class="spec-unit">MB</span>
+            </div>
+          </div>
+          <div class="spec-row" role="listitem">
+            <div>
+              <div class="spec-label">D1 State sync</div>
+              <div class="spec-hint">SQLite at the edge</div>
+            </div>
+            <div class="spec-value-wrap">
+              <span class="spec-value">Instant</span>
+            </div>
+          </div>
+          <div class="spec-row" role="listitem">
+            <div>
+              <div class="spec-label">Concurrency cap</div>
+              <div class="spec-hint">soft limit</div>
+            </div>
+            <div class="spec-value-wrap">
+              <span class="spec-value">50</span>
+              <span class="spec-unit">tasks/hr</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Autopilot steps</h2>
+        <div class="step-grid" role="list">
+          <div class="step-card" role="listitem">
+            <div class="step-head">
+              <span class="step-index">01</span>
+              <span class="micro-chip">Sources</span>
+            </div>
+            <div class="step-title">Connect sources</div>
+            <p class="step-desc">Wire Gmail, Slack, and ads as inputs the loop can read.</p>
+          </div>
+          <div class="step-card" role="listitem">
+            <div class="step-head">
+              <span class="step-index">02</span>
+              <span class="micro-chip">Gates</span>
+            </div>
+            <div class="step-title">Define loop gates</div>
+            <p class="step-desc">Set caps, approval pauses, and kill criteria before takeoff.</p>
+            <pre class="step-visual">if tokens &gt; cap → pause</pre>
+          </div>
+          <div class="step-card" role="listitem">
+            <div class="step-head">
+              <span class="step-index">03</span>
+              <span class="micro-chip">Run</span>
+            </div>
+            <div class="step-title">Run autopilot</div>
+            <p class="step-desc">Kilo executes, checkpoints state, and pages you on gates.</p>
+          </div>
         </div>
       </section>
 
