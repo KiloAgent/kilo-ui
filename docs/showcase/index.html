@@ -395,6 +395,86 @@
         text-overflow: ellipsis;
         white-space: nowrap;
       }
+
+      .iso-lede {
+        margin: 0 0 0.75rem;
+        max-width: 36rem;
+        color: var(--ka-muted);
+        font-size: 0.9rem;
+      }
+      .iso-stage {
+        position: relative;
+        height: 420px;
+        overflow: hidden;
+        border: 1px solid var(--ka-line);
+        border-radius: var(--radius);
+        background: var(--ka-bg);
+        touch-action: none;
+        user-select: none;
+      }
+      .iso-stage:focus-visible {
+        outline: 2px solid var(--ka-ink);
+        outline-offset: 3px;
+      }
+      .iso-stage canvas { display: block; width: 100%; height: 100%; }
+      .iso-hud {
+        position: absolute;
+        top: 0.75rem;
+        left: 0.75rem;
+        z-index: 2;
+        min-width: 11.5rem;
+        padding: 0.5rem 0.625rem;
+        border: 1px solid var(--ka-line);
+        border-radius: var(--radius);
+        background: var(--ka-surface);
+        pointer-events: none;
+      }
+      .iso-hud-label {
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .iso-hud-grid {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.15rem 0.75rem;
+        margin-top: 0.4rem;
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        font-variant-numeric: tabular-nums;
+      }
+      .iso-hud-k { letter-spacing: 0.1em; text-transform: uppercase; color: var(--ka-faint); }
+      .iso-hud-v { color: var(--ka-ink); }
+      .iso-hud-v.spec { color: var(--ka-muted); }
+      .iso-controls {
+        position: absolute;
+        bottom: 0.75rem;
+        left: 50%;
+        z-index: 2;
+        display: flex;
+        overflow: hidden;
+        border: 1px solid var(--ka-line);
+        border-radius: var(--radius);
+        background: var(--ka-surface);
+        transform: translateX(-50%);
+      }
+      .iso-controls button {
+        height: 1.75rem;
+        padding: 0 0.625rem;
+        border: 0;
+        border-right: 1px solid var(--ka-line);
+        background: transparent;
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ka-ink);
+        cursor: pointer;
+      }
+      .iso-controls button:last-child { border-right: 0; }
+      .iso-controls button:hover { background: var(--ka-subtle); }
     </style>
   </head>
   <body>
@@ -416,6 +496,36 @@
           <div class="swatch"><div class="chip" style="background:#111214"></div><div class="meta">ka-ink</div></div>
           <div class="swatch"><div class="chip" style="background:#2f3339"></div><div class="meta">ka-muted</div></div>
           <div class="swatch"><div class="chip" style="background:#f5b301"></div><div class="meta">ka-accent</div></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Interactive isometric machine</h2>
+        <p class="iso-lede">
+          Canvas 2D, 30° axonometric MicroVM chassis — no Three.js.
+          Move the pointer to tilt. Hover Kernel, Vault, Storage, or Bus for HUD telemetry.
+          Pause freezes conduit pulses; Reset recenters the stage.
+        </p>
+        <div
+          class="iso-stage"
+          id="iso-stage"
+          tabindex="0"
+          role="img"
+          aria-label="Interactive isometric MicroVM chassis with inspectable Kernel, Vault, Storage, and Bus modules"
+        >
+          <canvas id="iso-canvas" aria-hidden="true"></canvas>
+          <div class="iso-hud" id="iso-hud" hidden>
+            <div class="iso-hud-label" data-iso-label>Kernel / LLM</div>
+            <div class="iso-hud-grid">
+              <span class="iso-hud-k">Status</span><span class="iso-hud-v" data-iso-status>READY</span>
+              <span class="iso-hud-k">p95</span><span class="iso-hud-v" data-iso-latency>12ms</span>
+              <span class="iso-hud-k">Spec</span><span class="iso-hud-v spec" data-iso-spec>isolate · 512MB</span>
+            </div>
+          </div>
+          <div class="iso-controls">
+            <button type="button" id="iso-pause" aria-pressed="false">Pause</button>
+            <button type="button" id="iso-reset">Reset</button>
+          </div>
         </div>
       </section>
 
@@ -673,5 +783,6 @@
         · MIT · <a href="https://github.com/KiloAgent/kilo-ui">GitHub</a>
       </footer>
     </main>
+    <script src="isometric-stage.js" defer></script>
   </body>
 </html>
