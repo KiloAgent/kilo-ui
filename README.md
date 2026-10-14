@@ -83,7 +83,7 @@ npx shadcn@latest registry validate KiloAgent/kilo-ui
 
 ## Showcase
 
-Open [`docs/showcase/index.html`](docs/showcase/index.html) in a browser for a static token and chrome preview. Live kitchen-sink on the KiloAgent site: [kiloagent.com/ui](https://www.kiloagent.com/ui) (noindex).
+`Showcase` in `src/showcase.tsx` is the one component list. The site page imports `@kiloagent/ui/showcase`. Build a static preview with `npm run showcase`, then open `.showcase-dist/index.html`.
 
 ## License
 

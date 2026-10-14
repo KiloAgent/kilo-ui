@@ -14,10 +14,12 @@
     "./components/*": "./src/components/*.tsx",
     "./marketing/*": "./src/marketing/*.tsx",
     "./package.json": "./package.json",
-    "./lib/field-styles": "./src/lib/field-styles.ts"
+    "./lib/field-styles": "./src/lib/field-styles.ts",
+    "./showcase": "./src/showcase.tsx"
   },
   "scripts": {
-    "check": "tsc -p tsconfig.json --noEmit"
+    "check": "tsc -p tsconfig.json --noEmit",
+    "showcase": "vite build --config preview/vite.config.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",
@@ -27,15 +29,21 @@
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.1.14",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
-    "typescript": "^6.0.3"
+    "@vitejs/plugin-react": "^5.0.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.14",
+    "typescript": "^6.0.3",
+    "vite": "^7.1.9"
   },
   "peerDependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
-  "description": "Dense technical UI kit for KiloAgent \u2014 Geist, hairline borders, sharp radii. shadcn registry + React package.",
+  "description": "Dense technical UI kit for KiloAgent — Geist, hairline borders, sharp radii. shadcn registry + React package.",
   "license": "MIT",
   "repository": {
     "type": "git",
