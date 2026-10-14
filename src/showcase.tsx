@@ -4,19 +4,62 @@ import { Badge } from "./components/badge";
 import { Button } from "./components/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "./components/card";
 import { DataCell, DataGrid } from "./components/data-cell";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./components/dialog";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./components/dropdown-menu";
 import { EventFeed, EventRow } from "./components/event-row";
 import { Input } from "./components/input";
 import { IntegrationCard, IntegrationGrid } from "./components/integration-card";
+import { IsometricStage } from "./components/isometric-stage";
 import { Label } from "./components/label";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "./components/navigation-menu";
 import { Panel, PanelActions, PanelFooter, PanelHeader, PanelTitle } from "./components/panel";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./components/select";
+import { Separator } from "./components/separator";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "./components/sheet";
+import { Skeleton } from "./components/skeleton";
 import { SpecMatrix, SpecRow } from "./components/spec-row";
 import { StageBoard, StageCard, StageColumn } from "./components/stage-board";
 import { StatusDot } from "./components/status-dot";
 import { StepCard, StepGrid } from "./components/step-card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/tabs";
 import { Textarea } from "./components/textarea";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./components/tooltip";
 import { WorkSplit, WorkSplitPane } from "./components/work-split";
+import { Badge as MarketingBadge } from "./marketing/badge";
+import { Button as MarketingButton } from "./marketing/button";
+import { Card as MarketingCard } from "./marketing/card";
+import { CaseCard } from "./marketing/case-card";
 import { CtaBlock } from "./marketing/cta-block";
+import { FounderCard } from "./marketing/founder-card";
+import { NativeSelect } from "./marketing/native-select";
+import { Prose } from "./marketing/prose";
 import { Container, Section, SectionHeading } from "./marketing/section";
+import { ToolCard, ToolContainer, ToolPage, ToolTitle } from "./marketing/tool-shell";
+import { Body, Display, H1, H2, H3, Lead, MonoLabel, Small } from "./marketing/typography";
 
 const TOKENS = [
   { name: "ka-bg", swatch: "bg-ka-bg" },
@@ -26,6 +69,9 @@ const TOKENS = [
   { name: "ka-muted", swatch: "bg-ka-muted" },
   { name: "ka-accent", swatch: "bg-ka-accent" },
 ] as const;
+
+const FOUNDER_PHOTO =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Crect width='160' height='160' fill='%23d8d8dc'/%3E%3C/svg%3E";
 
 function ShowcaseLabel({ children }: { children: ReactNode }) {
   return (
@@ -337,6 +383,222 @@ export function Showcase() {
               <Button>Book a call</Button>
             </div>
           </CtaBlock>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container size="md">
+          <ShowcaseLabel>Separator</ShowcaseLabel>
+          <Separator />
+        </Container>
+      </Section>
+
+      <Section>
+        <Container size="md">
+          <ShowcaseLabel>Skeleton</ShowcaseLabel>
+          <div className="flex flex-col gap-2">
+            <Skeleton className="h-3 w-48" />
+            <Skeleton className="h-3 w-28" />
+          </div>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container size="md">
+          <ShowcaseLabel>Tabs</ShowcaseLabel>
+          <Tabs defaultValue="runs">
+            <TabsList>
+              <TabsTrigger value="runs">Runs</TabsTrigger>
+              <TabsTrigger value="logs">Logs</TabsTrigger>
+            </TabsList>
+            <TabsContent value="runs">Latest run output is shown here.</TabsContent>
+          </Tabs>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container size="md">
+          <ShowcaseLabel>Select</ShowcaseLabel>
+          <Select defaultValue="Live">
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="Live">Live</SelectItem>
+              <SelectItem value="Idle">Idle</SelectItem>
+            </SelectContent>
+          </Select>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container size="md">
+          <ShowcaseLabel>Dropdown menu</ShowcaseLabel>
+          <DropdownMenu>
+            <DropdownMenuTrigger render={<Button />}>Menu</DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>Rename</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container size="md">
+          <ShowcaseLabel>Tooltip</ShowcaseLabel>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger render={<Button />}>Hover</TooltipTrigger>
+              <TooltipContent>12ms</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container size="md">
+          <ShowcaseLabel>Dialog</ShowcaseLabel>
+          <Dialog>
+            <DialogTrigger render={<Button />}>Open dialog</DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Run</DialogTitle>
+                <DialogDescription>One line.</DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container size="md">
+          <ShowcaseLabel>Sheet</ShowcaseLabel>
+          <Sheet>
+            <SheetTrigger render={<Button />}>Open sheet</SheetTrigger>
+            <SheetContent>
+              <SheetHeader>
+                <SheetTitle>Target</SheetTitle>
+                <SheetDescription>MMSI 244670890</SheetDescription>
+              </SheetHeader>
+            </SheetContent>
+          </Sheet>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container size="md">
+          <ShowcaseLabel>Navigation menu</ShowcaseLabel>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuLink href="#">Overview</NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink href="#">Runs</NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container size="md">
+          <ShowcaseLabel>Isometric stage</ShowcaseLabel>
+          <IsometricStage height={420} showControls={false} interactive={false} />
+        </Container>
+      </Section>
+
+      <Section>
+        <Container size="md">
+          <ShowcaseLabel>Marketing badge</ShowcaseLabel>
+          <MarketingBadge>Default</MarketingBadge>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container size="md">
+          <ShowcaseLabel>Marketing button</ShowcaseLabel>
+          <MarketingButton>Primary</MarketingButton>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container size="md">
+          <ShowcaseLabel>Marketing card</ShowcaseLabel>
+          <MarketingCard>Hairline card</MarketingCard>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container size="md">
+          <ShowcaseLabel>Typography</ShowcaseLabel>
+          <div className="flex flex-col gap-3">
+            <Display>Display</Display>
+            <H1>H1</H1>
+            <H2>H2</H2>
+            <H3>H3</H3>
+            <Lead>Lead</Lead>
+            <Body>Body</Body>
+            <Small>Small</Small>
+            <MonoLabel>MonoLabel</MonoLabel>
+          </div>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container size="md">
+          <ShowcaseLabel>Prose</ShowcaseLabel>
+          <Prose>
+            <p>Shared prose block.</p>
+          </Prose>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container size="md">
+          <ShowcaseLabel>Native select</ShowcaseLabel>
+          <NativeSelect defaultValue="Live">
+            <option value="Live">Live</option>
+            <option value="Idle">Idle</option>
+          </NativeSelect>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container size="md">
+          <ShowcaseLabel>Case card</ShowcaseLabel>
+          <CaseCard
+            href="#"
+            name="Northwind"
+            eyebrow="Case"
+            summary="One loop, reviewed."
+            linkLabel="Read"
+          />
+        </Container>
+      </Section>
+
+      <Section>
+        <Container size="md">
+          <ShowcaseLabel>Founder card</ShowcaseLabel>
+          <FounderCard
+            eyebrow="Founder"
+            name="Ada Klein"
+            role="Operator"
+            body="Builds the loop."
+            photoSrc={FOUNDER_PHOTO}
+          />
+        </Container>
+      </Section>
+
+      <Section>
+        <Container size="md">
+          <ShowcaseLabel>Tool shell</ShowcaseLabel>
+          <ToolPage>
+            <ToolContainer>
+              <ToolTitle>Loop audit</ToolTitle>
+              <ToolCard>One step.</ToolCard>
+            </ToolContainer>
+          </ToolPage>
         </Container>
       </Section>
     </>
