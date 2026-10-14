@@ -8,7 +8,6 @@ const SIN30 = Math.sin(Math.PI / 6);
 const AMBER = "#f5b301";
 const CYAN = "#06b6d4";
 const INK = "#111214";
-const LINE = "#d8d8dc";
 const PAPER = "#f7f7f8";
 const SURFACE = "#ffffff";
 const MUTED = "#2f3339";
