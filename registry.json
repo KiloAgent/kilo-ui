@@ -65,6 +65,21 @@
       ]
     },
     {
+      "name": "artifact-window",
+      "type": "registry:ui",
+      "title": "Artifact Window",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/artifact-window.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/artifact-window.tsx"
+        }
+      ]
+    },
+    {
       "name": "badge",
       "type": "registry:ui",
       "title": "Badge",
@@ -374,6 +389,21 @@
       ]
     },
     {
+      "name": "stage-board",
+      "type": "registry:ui",
+      "title": "Stage Board",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/stage-board.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/stage-board.tsx"
+        }
+      ]
+    },
+    {
       "name": "status-dot",
       "type": "registry:ui",
       "title": "Status Dot",
@@ -456,6 +486,21 @@
           "path": "src/components/tooltip.tsx",
           "type": "registry:ui",
           "target": "components/kilo-ui/components/tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "work-split",
+      "type": "registry:ui",
+      "title": "Work Split",
+      "registryDependencies": [
+        "KiloAgent/kilo-ui/cn"
+      ],
+      "files": [
+        {
+          "path": "src/components/work-split.tsx",
+          "type": "registry:ui",
+          "target": "components/kilo-ui/components/work-split.tsx"
         }
       ]
     },

@@ -475,6 +475,139 @@
       }
       .iso-controls button:last-child { border-right: 0; }
       .iso-controls button:hover { background: var(--ka-subtle); }
+
+      .work-split-breakout {
+        width: min(72rem, calc(100vw - 2.5rem));
+        margin-left: 50%;
+        transform: translateX(-50%);
+      }
+      .work-split {
+        display: flex;
+        overflow: hidden;
+        background: var(--ka-surface);
+        border: 1px solid var(--ka-line);
+        border-radius: var(--radius);
+      }
+      .work-split-pane-thread {
+        width: 34%;
+        flex-shrink: 0;
+        border-right: 1px solid var(--ka-line);
+      }
+      .work-split-pane-artifact {
+        display: flex;
+        flex: 1;
+        min-width: 0;
+        flex-direction: column;
+      }
+      @media (max-width: 48rem) {
+        .work-split { flex-direction: column; }
+        .work-split-pane-thread {
+          width: 100%;
+          border-right: 0;
+          border-bottom: 1px solid var(--ka-line);
+        }
+      }
+      .thread-row {
+        padding: 0.5rem 0.625rem;
+        border-bottom: 1px solid var(--ka-line);
+      }
+      .thread-row:last-child { border-bottom: 0; }
+      .thread-speaker {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ka-ink);
+      }
+      .thread-msg {
+        margin-top: 0.15rem;
+        font-size: 0.75rem;
+        color: var(--ka-ink);
+      }
+      .artifact-window {
+        display: flex;
+        flex: 1;
+        min-width: 0;
+        flex-direction: column;
+        background: var(--ka-surface);
+      }
+      .artifact-window-header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        min-height: 2rem;
+        padding: 0.35rem 0.625rem;
+        border-bottom: 1px solid var(--ka-line);
+        background: var(--ka-surface);
+      }
+      .artifact-title {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ka-ink);
+      }
+      .artifact-pipe {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        color: var(--ka-faint);
+      }
+      .artifact-kind {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ka-faint);
+      }
+      .artifact-actions { margin-left: auto; }
+      .artifact-window-header .btn {
+        height: 1.375rem;
+        padding: 0 0.5rem;
+        font-size: 0.6875rem;
+      }
+      .stage-board {
+        display: flex;
+        gap: 0.5rem;
+        min-width: 0;
+        overflow-x: auto;
+        padding: 0.625rem;
+      }
+      .stage-column {
+        display: flex;
+        flex: 1;
+        min-width: 9rem;
+        flex-direction: column;
+        gap: 0.375rem;
+      }
+      .stage-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ka-faint);
+      }
+      .stage-card {
+        border: 1px solid var(--ka-line);
+        border-radius: var(--radius);
+        background: var(--ka-surface);
+        padding: 0.375rem 0.5rem;
+      }
+      .stage-card-name {
+        font-size: 0.75rem;
+        color: var(--ka-ink);
+      }
+      .stage-card-meta {
+        margin-top: 0.1rem;
+        font-family: var(--font-mono);
+        font-size: 10px;
+        color: var(--ka-faint);
+      }
+      .artifact-window .data-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        border-top: 1px solid var(--ka-line);
+        border-bottom: 0;
+      }
     </style>
   </head>
   <body>
@@ -630,6 +763,87 @@
             </div>
           </div>
           <div class="panel-footer">4 events · 128ms p95 · 14.3k tokens</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Work split</h2>
+        <div class="work-split-breakout">
+          <div class="work-split">
+            <div class="work-split-pane-thread">
+              <div class="thread-row">
+                <div class="thread-speaker">OPS</div>
+                <div class="thread-msg">Invoice tracker is in the room.</div>
+              </div>
+              <div class="thread-row">
+                <div class="thread-speaker">AGENT</div>
+                <div class="thread-msg">Built the board from the billing inbox.</div>
+              </div>
+              <div class="thread-row">
+                <div class="thread-speaker">OPS</div>
+                <div class="thread-msg">Publish it.</div>
+              </div>
+            </div>
+            <div class="work-split-pane-artifact">
+              <div class="artifact-window">
+                <div class="artifact-window-header">
+                  <span class="artifact-title">Talent pipeline</span>
+                  <span class="artifact-pipe" aria-hidden="true">|</span>
+                  <span class="artifact-kind">APP</span>
+                  <span class="artifact-actions">
+                    <span class="btn btn-primary">Publish</span>
+                  </span>
+                </div>
+                <div class="artifact-window-body">
+                  <div class="stage-board">
+                    <div class="stage-column">
+                      <div class="stage-label">NEW</div>
+                      <div class="stage-card">
+                        <div class="stage-card-name">Ada Klein</div>
+                        <div class="stage-card-meta">ops inbound</div>
+                      </div>
+                      <div class="stage-card">
+                        <div class="stage-card-name">Jonah Peck</div>
+                        <div class="stage-card-meta">finance inbound</div>
+                      </div>
+                    </div>
+                    <div class="stage-column">
+                      <div class="stage-label">SCREEN</div>
+                      <div class="stage-card">
+                        <div class="stage-card-name">Mira Chen</div>
+                        <div class="stage-card-meta">product screen</div>
+                      </div>
+                    </div>
+                    <div class="stage-column">
+                      <div class="stage-label">INTERVIEW</div>
+                      <div class="stage-card">
+                        <div class="stage-card-name">Luis Ortega</div>
+                        <div class="stage-card-meta">eng onsite</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-grid">
+                    <div class="data-cell">
+                      <div class="data-label">Applicants</div>
+                      <div class="data-value">42<span class="data-hint">open</span></div>
+                    </div>
+                    <div class="data-cell">
+                      <div class="data-label">Pipeline</div>
+                      <div class="data-value">486k<span class="data-hint">usd</span></div>
+                    </div>
+                    <div class="data-cell">
+                      <div class="data-label">Interviews</div>
+                      <div class="data-value">11<span class="data-hint">this week</span></div>
+                    </div>
+                    <div class="data-cell">
+                      <div class="data-label">Offers</div>
+                      <div class="data-value">7<span class="data-hint">out</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
